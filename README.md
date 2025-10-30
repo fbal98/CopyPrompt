@@ -17,7 +17,7 @@ CopyPrompt is a macOS menu bar app that gives you instant access to your collect
 
 ### Download
 
-1. Download `CopyPrompt-1.0.0.dmg` from [Releases](https://github.com/yourusername/CopyPrompt/releases)
+1. Download `CopyPrompt-1.0.0.dmg` from [Releases](https://github.com/fbal98/CopyPrompt/releases)
 2. Open the DMG and drag CopyPrompt to Applications
 3. Launch from Applications folder
 4. Grant accessibility permissions if prompted
@@ -26,7 +26,7 @@ CopyPrompt is a macOS menu bar app that gives you instant access to your collect
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/CopyPrompt.git
+git clone https://github.com/fbal98/CopyPrompt.git
 cd CopyPrompt
 
 # Install dependencies (optional: for linting)
@@ -46,27 +46,9 @@ open CopyPrompt.xcodeproj
 
 ## Quick Start
 
-### First Launch
-
-1. **Privacy Notice**: On first launch, you'll see a privacy notice explaining that all data stays local
-2. **Add Prompts**: Open Settings (Cmd+,) and click the + button
-3. **Search & Copy**: Click the menu bar icon, type to search, Enter to copy
-
-### Adding Prompts
-
-1. Click the PromptDock icon in the menu bar
-2. Press Cmd+, or select PromptDock → Settings
-3. Click the + New button
-4. Enter a title and body
-5. Press Save (or Enter)
-
-### Using Prompts
-
-1. Click the menu bar icon (or assign a global hotkey)
-2. Type to search your prompts
-3. Use ↑/↓ to select
-4. Press Enter or click to copy
-5. Panel auto-closes
+1. **First Launch**: On first run, you'll see a privacy notice (all data stays local)
+2. **Add Prompts**: Open Settings (Cmd+,) → click + New → enter title and body → Save
+3. **Search & Copy**: Click menu bar icon → type to search → press Enter to copy → panel auto-closes
 
 ## Keyboard Shortcuts
 
@@ -138,83 +120,27 @@ Prompts are stored as JSON:
 
 ## Development
 
-### Project Structure
-```
-PromptDock/
-├── PromptDockApp.swift          # App entry point
-├── Features/
-│   ├── StatusBar/               # Menu bar integration
-│   ├── Search/                  # Search UI and logic
-│   └── Settings/                # Settings window
-├── Services/
-│   ├── PromptStore.swift        # JSON persistence
-│   ├── FuzzySearchEngine.swift  # Search algorithm
-│   ├── Clipboard.swift          # Pasteboard integration
-│   ├── AppPreferences.swift     # User defaults
-│   ├── LoginItemManager.swift   # Launch on login
-│   └── Metrics.swift            # Performance tracking
-├── Models/
-│   ├── Prompt.swift             # Core data model
-│   └── PromptList.swift         # Container with versioning
-└── Views/
-    ├── PrivacyNoticeView.swift  # First-run notice
-    └── MetricsStatsView.swift   # Performance stats
-```
-
 ### Building
 
 ```bash
 # Debug build
-xcodebuild -scheme PromptDock -configuration Debug build
+xcodebuild -scheme CopyPrompt -configuration Debug build
 
 # Release build
 ./Scripts/release.sh
-
-# Run tests (when implemented)
-xcodebuild -scheme PromptDock test
 ```
 
-### Documentation
-
-- [RELEASE.md](RELEASE.md) - Build, sign, and notarize for distribution
-- [PROFILING.md](PROFILING.md) - Performance profiling guide
-- [QA_TEST_PLAN.md](QA_TEST_PLAN.md) - Comprehensive test coverage
-- [APP_ICON.md](APP_ICON.md) - Icon design guidelines
-- [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md) - Pre-release verification
+See [CLAUDE.md](CLAUDE.md) for complete architecture, project structure, and development guidelines.
 
 ## Troubleshooting
 
-### App Won't Open
-**Symptom**: "PromptDock is damaged and can't be opened"
+**App won't open**: The app needs to be notarized. If building from source, right-click the app and select "Open".
 
-**Solution**: The app needs to be notarized. If building from source:
-1. Right-click the app
-2. Select "Open"
-3. Click "Open" in the security dialog
+**Panel doesn't appear**: Check System Settings → Privacy & Security and grant accessibility permissions.
 
-### Panel Doesn't Appear
-**Symptom**: Clicking menu bar icon does nothing
+**Prompts not saving**: Ensure the app has write access to `~/Library/Application Support/CopyPrompt/`. Check Console.app for error messages.
 
-**Solution**:
-1. Check System Settings → Privacy & Security
-2. Grant accessibility permissions if requested
-3. Restart the app
-
-### Prompts Not Saving
-**Symptom**: Changes don't persist after restart
-
-**Solution**:
-1. Check file permissions: `ls -l ~/Library/Application\ Support/PromptDock/`
-2. Ensure the app has write access to its container
-3. Check Console.app for error messages
-
-### Performance Issues
-**Symptom**: Search feels slow with many prompts
-
-**Solution**:
-1. Enable metrics in Settings
-2. View Stats to see actual timings
-3. If > 50ms average, file an issue with details
+**Slow search**: Enable metrics in Settings to view actual timings. If search is consistently > 50ms, file an issue.
 
 ## Contributing
 
@@ -239,8 +165,8 @@ Built with:
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/promptDock/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/promptDock/discussions)
+- **Issues**: [GitHub Issues](https://github.com/fbal98/CopyPrompt/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/fbal98/CopyPrompt/discussions)
 - **Privacy Questions**: See [PRIVACY.md](PRIVACY.md)
 
 ## Roadmap
