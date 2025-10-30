@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+Build/
+.build/
+
+# Xcode user data
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
+
+# Xcode derived data
+DerivedData/
+.derived/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Misc
+*.swp
+*.swo
+*~
+.env
+.env.local
+
+# Release artifacts (build locally, don't commit)
+release/
+*.dmg
+*.zip
+*.sha256
+
+# Local settings
+.claude/settings.local.json

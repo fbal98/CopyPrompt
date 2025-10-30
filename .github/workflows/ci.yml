@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode.app
+
+    - name: Install SwiftLint
+      run: brew install swiftlint
+
+    - name: Install SwiftFormat
+      run: brew install swiftformat
+
+    - name: SwiftLint
+      run: swiftlint lint --strict
+
+    - name: SwiftFormat Check
+      run: swiftformat --lint .
+
+    - name: Build
+      run: |
+        xcodebuild clean build \
+          -scheme PromptDock \
+          -configuration Debug \
+          -destination 'platform=macOS' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO

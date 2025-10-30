@@ -1,0 +1,16 @@
+--swiftversion 5.9
+--indent 4
+--indentcase false
+--trimwhitespace always
+--nospaceoperators ..<,...
+--ifdef no-indent
+--stripunusedargs closure-only
+--self remove
+--importgrouping testable-bottom
+--commas always
+--decimalgrouping 3,6
+--exponentgrouping disabled
+--fractiongrouping disabled
+--hexgrouping 4,8
+--header strip
+--maxwidth 120

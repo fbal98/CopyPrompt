@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001000000000000001 /* CopyPromptApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001 /* CopyPromptApp.swift */; };
+		A1000002000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002000000000000001 /* ContentView.swift */; };
+		A1000003000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000003000000000000001 /* Assets.xcassets */; };
+		A1000004000000000000001 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006000000000000001 /* StatusBarController.swift */; };
+		A1000005000000000000001 /* TranslucentPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007000000000000001 /* TranslucentPanel.swift */; };
+		A1000006000000000000001 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008000000000000001 /* SearchView.swift */; };
+		A1000007000000000000001 /* SearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* SearchRowView.swift */; };
+		A1000008000000000000001 /* FuzzySearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000000000000001 /* FuzzySearchEngine.swift */; };
+		A1000009000000000000001 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011000000000000001 /* Clipboard.swift */; };
+		A1000010000000000000001 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012000000000000001 /* Prompt.swift */; };
+		A1000011000000000000001 /* PromptList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013000000000000001 /* PromptList.swift */; };
+		A1000012000000000000001 /* PromptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014000000000000001 /* PromptStore.swift */; };
+		A1000013000000000000001 /* SearchContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000015000000000000001 /* SearchContainerView.swift */; };
+		A1000014000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000016000000000000001 /* SettingsView.swift */; };
+		A1000015000000000000001 /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000017000000000000001 /* AppPreferences.swift */; };
+		A1000016000000000000001 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000018000000000000001 /* LoginItemManager.swift */; };
+		A1000017000000000000001 /* PrivacyNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000019000000000000001 /* PrivacyNoticeView.swift */; };
+		A1000018000000000000001 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000020000000000000001 /* Metrics.swift */; };
+		A1000019000000000000001 /* MetricsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000021000000000000001 /* MetricsStatsView.swift */; };
+		A1000020000000000000001 /* AppMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000022000000000000001 /* AppMenuManager.swift */; };
+		A1000021000000000000001 /* PromptEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000023000000000000001 /* PromptEditorView.swift */; };
+		A1000022000000000000001 /* NewPromptContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024000000000000001 /* NewPromptContainerView.swift */; };
+		A1000023000000000000001 /* EditPromptContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000025000000000000001 /* EditPromptContainerView.swift */; };
+		A1000024000000000000001 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000026000000000000001 /* CustomTextEditor.swift */; };
+		A1000025000000000000001 /* DiagnosticSheetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000027000000000000001 /* DiagnosticSheetWindow.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2000001000000000000001 /* CopyPromptApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPromptApp.swift; sourceTree = "<group>"; };
+		A2000002000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2000003000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000004000000000000001 /* PromptDock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PromptDock.entitlements; sourceTree = "<group>"; };
+		A2000005000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000006000000000000001 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		A2000007000000000000001 /* TranslucentPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentPanel.swift; sourceTree = "<group>"; };
+		A2000008000000000000001 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A2000009000000000000001 /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
+		A2000010000000000000001 /* FuzzySearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzySearchEngine.swift; sourceTree = "<group>"; };
+		A2000011000000000000001 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		A2000012000000000000001 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		A2000013000000000000001 /* PromptList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptList.swift; sourceTree = "<group>"; };
+		A2000014000000000000001 /* PromptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptStore.swift; sourceTree = "<group>"; };
+		A2000015000000000000001 /* SearchContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContainerView.swift; sourceTree = "<group>"; };
+		A2000016000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A2000017000000000000001 /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		A2000018000000000000001 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		A2000019000000000000001 /* PrivacyNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyNoticeView.swift; sourceTree = "<group>"; };
+		A2000020000000000000001 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		A2000021000000000000001 /* MetricsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsStatsView.swift; sourceTree = "<group>"; };
+		A2000022000000000000001 /* AppMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuManager.swift; sourceTree = "<group>"; };
+		A2000023000000000000001 /* PromptEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptEditorView.swift; sourceTree = "<group>"; };
+		A2000024000000000000001 /* NewPromptContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPromptContainerView.swift; sourceTree = "<group>"; };
+		A2000025000000000000001 /* EditPromptContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPromptContainerView.swift; sourceTree = "<group>"; };
+		A2000026000000000000001 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+		A2000027000000000000001 /* DiagnosticSheetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticSheetWindow.swift; sourceTree = "<group>"; };
+		A3000001000000000000001 /* CopyPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4000001000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB000001000000000000001 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		AB000002000000000000001 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftformat >/dev/null 2>&1\nthen\n    swiftformat .\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5000001000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A5000002000000000000001 /* PromptDock */,
+				A5000003000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5000002000000000000001 /* PromptDock */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000001 /* CopyPromptApp.swift */,
+				A2000002000000000000001 /* ContentView.swift */,
+				A5000004000000000000001 /* Features */,
+				A5000010000000000000001 /* Views */,
+				A5000007000000000000001 /* Services */,
+				A5000008000000000000001 /* Models */,
+				A2000003000000000000001 /* Assets.xcassets */,
+				A2000004000000000000001 /* PromptDock.entitlements */,
+				A2000005000000000000001 /* Info.plist */,
+			);
+			path = CopyPrompt;
+			sourceTree = "<group>";
+		};
+		A5000004000000000000001 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A5000005000000000000001 /* StatusBar */,
+				A5000006000000000000001 /* Search */,
+				A5000009000000000000001 /* Settings */,
+				A5000011000000000000001 /* PromptEditor */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A5000005000000000000001 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				A2000006000000000000001 /* StatusBarController.swift */,
+				A2000007000000000000001 /* TranslucentPanel.swift */,
+				A2000022000000000000001 /* AppMenuManager.swift */,
+			);
+			path = StatusBar;
+			sourceTree = "<group>";
+		};
+		A5000006000000000000001 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A2000008000000000000001 /* SearchView.swift */,
+				A2000009000000000000001 /* SearchRowView.swift */,
+				A2000015000000000000001 /* SearchContainerView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A5000007000000000000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2000010000000000000001 /* FuzzySearchEngine.swift */,
+				A2000011000000000000001 /* Clipboard.swift */,
+				A2000014000000000000001 /* PromptStore.swift */,
+				A2000017000000000000001 /* AppPreferences.swift */,
+				A2000018000000000000001 /* LoginItemManager.swift */,
+				A2000020000000000000001 /* Metrics.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A5000008000000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2000012000000000000001 /* Prompt.swift */,
+				A2000013000000000000001 /* PromptList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5000009000000000000001 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A2000016000000000000001 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A5000010000000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2000019000000000000001 /* PrivacyNoticeView.swift */,
+				A2000021000000000000001 /* MetricsStatsView.swift */,
+				A2000026000000000000001 /* CustomTextEditor.swift */,
+				A2000027000000000000001 /* DiagnosticSheetWindow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5000011000000000000001 /* PromptEditor */ = {
+			isa = PBXGroup;
+			children = (
+				A2000023000000000000001 /* PromptEditorView.swift */,
+				A2000024000000000000001 /* NewPromptContainerView.swift */,
+				A2000025000000000000001 /* EditPromptContainerView.swift */,
+			);
+			path = PromptEditor;
+			sourceTree = "<group>";
+		};
+		A5000003000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3000001000000000000001 /* CopyPrompt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6000001000000000000001 /* PromptDock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000001000000000000001 /* Build configuration list for PBXNativeTarget "PromptDock" */;
+			buildPhases = (
+				AB000001000000000000001 /* SwiftLint */,
+				AB000002000000000000001 /* SwiftFormat */,
+				A4000001000000000000001 /* Frameworks */,
+				A8000001000000000000001 /* Sources */,
+				A9000001000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CopyPrompt;
+			productName = CopyPrompt;
+			productReference = A3000001000000000000001 /* CopyPrompt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0000001000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A6000001000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A7000002000000000000001 /* Build configuration list for PBXProject "PromptDock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5000001000000000000001;
+			productRefGroup = A5000003000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6000001000000000000001 /* PromptDock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9000001000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000003000000000000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8000001000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000002000000000000001 /* ContentView.swift in Sources */,
+				A1000001000000000000001 /* CopyPromptApp.swift in Sources */,
+				A1000004000000000000001 /* StatusBarController.swift in Sources */,
+				A1000005000000000000001 /* TranslucentPanel.swift in Sources */,
+				A1000006000000000000001 /* SearchView.swift in Sources */,
+				A1000007000000000000001 /* SearchRowView.swift in Sources */,
+				A1000008000000000000001 /* FuzzySearchEngine.swift in Sources */,
+				A1000009000000000000001 /* Clipboard.swift in Sources */,
+				A1000010000000000000001 /* Prompt.swift in Sources */,
+				A1000011000000000000001 /* PromptList.swift in Sources */,
+				A1000012000000000000001 /* PromptStore.swift in Sources */,
+				A1000013000000000000001 /* SearchContainerView.swift in Sources */,
+				A1000014000000000000001 /* SettingsView.swift in Sources */,
+				A1000015000000000000001 /* AppPreferences.swift in Sources */,
+				A1000016000000000000001 /* LoginItemManager.swift in Sources */,
+				A1000017000000000000001 /* PrivacyNoticeView.swift in Sources */,
+				A1000018000000000000001 /* Metrics.swift in Sources */,
+				A1000019000000000000001 /* MetricsStatsView.swift in Sources */,
+				A1000020000000000000001 /* AppMenuManager.swift in Sources */,
+				A1000021000000000000001 /* PromptEditorView.swift in Sources */,
+				A1000022000000000000001 /* NewPromptContainerView.swift in Sources */,
+				A1000023000000000000001 /* EditPromptContainerView.swift in Sources */,
+				A1000024000000000000001 /* CustomTextEditor.swift in Sources */,
+				A1000025000000000000001 /* DiagnosticSheetWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA000001000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA000002000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AA000003000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CopyPrompt/CopyPrompt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CopyPrompt/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.promptdock.PromptDock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA000004000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CopyPrompt/CopyPrompt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CopyPrompt/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.promptdock.PromptDock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7000001000000000000001 /* Build configuration list for PBXNativeTarget "PromptDock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000003000000000000001 /* Debug */,
+				AA000004000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7000002000000000000001 /* Build configuration list for PBXProject "PromptDock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000001000000000000001 /* Debug */,
+				AA000002000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0000001000000000000001 /* Project object */;
+}
