@@ -20,7 +20,7 @@ class StatusBarController: ObservableObject {
         contextMenu = menuManager?.createMenu()
 
         if let button = statusItem?.button {
-            button.image = NSImage(systemSymbolName: "doc.on.doc", accessibilityDescription: "CopyPrompt")
+            button.image = NSImage(named: "MenuBarIcon")
             button.action = #selector(togglePanel)
             button.target = self
 
