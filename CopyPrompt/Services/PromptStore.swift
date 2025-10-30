@@ -11,17 +11,17 @@ enum PromptStoreError: Error {
     var localizedDescription: String {
         switch self {
         case .directoryCreationFailed:
-            return "Failed to create application directory"
-        case .loadFailed(let error):
-            return "Failed to load prompts: \(error.localizedDescription)"
-        case .saveFailed(let error):
-            return "Failed to save prompts: \(error.localizedDescription)"
+            "Failed to create application directory"
+        case let .loadFailed(error):
+            "Failed to load prompts: \(error.localizedDescription)"
+        case let .saveFailed(error):
+            "Failed to save prompts: \(error.localizedDescription)"
         case .corruptedData:
-            return "Data file is corrupted"
-        case .migrationFailed(let from, let to):
-            return "Failed to migrate data from version \(from) to \(to)"
-        case .unsupportedSchemaVersion(let version):
-            return "Unsupported schema version: \(version)"
+            "Data file is corrupted"
+        case let .migrationFailed(from, to):
+            "Failed to migrate data from version \(from) to \(to)"
+        case let .unsupportedSchemaVersion(version):
+            "Unsupported schema version: \(version)"
         }
     }
 }
@@ -177,7 +177,7 @@ class PromptStore: ObservableObject {
 
     func reorder(from source: IndexSet, to destination: Int) throws {
         prompts.move(fromOffsets: source, toOffset: destination)
-        for (index, _) in prompts.enumerated() {
+        for index in prompts.indices {
             prompts[index].position = index
         }
         try save()
@@ -200,7 +200,7 @@ class PromptStore: ObservableObject {
         prompts.move(fromOffsets: sourceIndexSet, toOffset: currentPinnedCount)
 
         // Update positions
-        for (index, _) in prompts.enumerated() {
+        for index in prompts.indices {
             prompts[index].position = index
         }
 
@@ -230,7 +230,7 @@ class PromptStore: ObservableObject {
         prompts.move(fromOffsets: sourceIndexSet, toOffset: preferences.pinnedCount)
 
         // Update positions
-        for (index, _) in prompts.enumerated() {
+        for index in prompts.indices {
             prompts[index].position = index
         }
 

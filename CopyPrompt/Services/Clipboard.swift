@@ -1,6 +1,6 @@
 import AppKit
 
-struct Clipboard {
+enum Clipboard {
     static func copy(_ text: String) {
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()

@@ -58,7 +58,7 @@ class Metrics: ObservableObject {
     }
 
     private init() {
-        self.isEnabled = UserDefaults.standard.bool(forKey: "metricsEnabled")
+        isEnabled = UserDefaults.standard.bool(forKey: "metricsEnabled")
         loadEvents()
     }
 
@@ -90,16 +90,17 @@ class Metrics: ObservableObject {
     func getStats() -> MetricsStats {
         let ttcEvents = events
             .filter { $0.eventType == "time-to-copy" }
-            .compactMap { $0.duration }
+            .compactMap(\.duration)
             .sorted()
 
         let searchEvents = events
             .filter { $0.eventType == "search-keystroke" }
-            .compactMap { $0.duration }
+            .compactMap(\.duration)
 
-        let ttcP50: TimeInterval? = ttcEvents.isEmpty ? nil : percentile(ttcEvents, p: 0.50)
-        let ttcP95: TimeInterval? = ttcEvents.isEmpty ? nil : percentile(ttcEvents, p: 0.95)
-        let avgSearchTime: TimeInterval? = searchEvents.isEmpty ? nil : searchEvents.reduce(0, +) / Double(searchEvents.count)
+        let ttcP50: TimeInterval? = ttcEvents.isEmpty ? nil : percentile(ttcEvents, percentile: 0.50)
+        let ttcP95: TimeInterval? = ttcEvents.isEmpty ? nil : percentile(ttcEvents, percentile: 0.95)
+        let avgSearchTime: TimeInterval? = searchEvents.isEmpty ? nil :
+            searchEvents.reduce(0, +) / Double(searchEvents.count)
 
         return MetricsStats(
             ttcP50: ttcP50,
@@ -109,16 +110,17 @@ class Metrics: ObservableObject {
         )
     }
 
-    private func percentile(_ values: [TimeInterval], p: Double) -> TimeInterval {
+    private func percentile(_ values: [TimeInterval], percentile: Double) -> TimeInterval {
         guard !values.isEmpty else { return 0 }
         let sorted = values.sorted()
-        let index = Int(Double(sorted.count) * p)
+        let index = Int(Double(sorted.count) * percentile)
         return sorted[min(index, sorted.count - 1)]
     }
 
     private func loadEvents() {
         guard let url = logsFileURL,
-              fileManager.fileExists(atPath: url.path) else {
+              fileManager.fileExists(atPath: url.path)
+        else {
             events = []
             return
         }

@@ -11,6 +11,6 @@ class AppPreferences: ObservableObject {
 
     private init() {
         let savedCount = UserDefaults.standard.integer(forKey: "pinnedCount")
-        self.pinnedCount = savedCount > 0 ? savedCount : 3
+        pinnedCount = savedCount > 0 ? savedCount : 3
     }
 }

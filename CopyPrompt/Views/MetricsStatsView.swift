@@ -58,7 +58,7 @@ struct MetricsStatsView: View {
     }
 
     private func formatDuration(_ duration: TimeInterval?, unit: String = "s") -> String {
-        guard let duration = duration else { return "N/A" }
+        guard let duration else { return "N/A" }
 
         if unit == "ms" {
             return String(format: "%.1f ms", duration * 1000)
@@ -68,7 +68,7 @@ struct MetricsStatsView: View {
     }
 
     private func getStatus(_ value: TimeInterval?, threshold: TimeInterval) -> StatStatus {
-        guard let value = value else { return .neutral }
+        guard let value else { return .neutral }
         return value <= threshold ? .good : .warning
     }
 }

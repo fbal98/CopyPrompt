@@ -177,7 +177,7 @@ struct SettingsView: View {
                         }
                     )
 
-                    if index == preferences.pinnedCount - 1 && index < promptStore.prompts.count - 1 {
+                    if index == preferences.pinnedCount - 1, index < promptStore.prompts.count - 1 {
                         HStack {
                             Text("PINNED")
                                 .font(.system(size: 10, weight: .semibold))

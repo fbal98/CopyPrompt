@@ -1,6 +1,6 @@
 import Foundation
 
-struct FuzzySearchEngine {
+enum FuzzySearchEngine {
     private struct ScoredPrompt {
         let prompt: Prompt
         let score: Double
@@ -33,11 +33,11 @@ struct FuzzySearchEngine {
 
         return scoredResults
             .sorted { $0.score > $1.score }
-            .map { $0.prompt }
+            .map(\.prompt)
     }
 
     private static func normalize(_ text: String) -> String {
-        return text
+        text
             .folding(options: .diacriticInsensitive, locale: .current)
             .lowercased()
     }

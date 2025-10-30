@@ -85,9 +85,9 @@ struct SheetPresenterView<SheetContent: View>: NSViewRepresentable {
     }
 
     func updateNSView(_ nsView: NSView, context: Context) {
-        if isPresented && context.coordinator.sheetWindow == nil {
+        if isPresented, context.coordinator.sheetWindow == nil {
             context.coordinator.presentSheet()
-        } else if !isPresented && context.coordinator.sheetWindow != nil {
+        } else if !isPresented, context.coordinator.sheetWindow != nil {
             context.coordinator.dismissSheet()
         }
     }
@@ -103,13 +103,14 @@ struct SheetPresenterView<SheetContent: View>: NSViewRepresentable {
         var sheetWindow: DiagnosticSheetWindow?
 
         init(isPresented: Binding<Bool>, sheetContent: @escaping () -> SheetContent) {
-            self._isPresented = isPresented
+            _isPresented = isPresented
             self.sheetContent = sheetContent
         }
 
         func presentSheet() {
-            guard let parentView = parentView,
-                  let parentWindow = parentView.window else {
+            guard let parentView,
+                  let parentWindow = parentView.window
+            else {
                 print("[DIAGNOSTIC] Cannot present - no parent window")
                 return
             }

@@ -82,9 +82,9 @@ struct SearchRowView: View {
             isSelected: false,
             isHovered: false,
             isPinned: false,
-            onEdit: { },
-            onDelete: { },
-            onTogglePin: { }
+            onEdit: {},
+            onDelete: {},
+            onTogglePin: {}
         )
 
         SearchRowView(
@@ -96,9 +96,9 @@ struct SearchRowView: View {
             isSelected: false,
             isHovered: true,
             isPinned: true,
-            onEdit: { },
-            onDelete: { },
-            onTogglePin: { }
+            onEdit: {},
+            onDelete: {},
+            onTogglePin: {}
         )
 
         SearchRowView(
@@ -110,9 +110,9 @@ struct SearchRowView: View {
             isSelected: true,
             isHovered: false,
             isPinned: false,
-            onEdit: { },
-            onDelete: { },
-            onTogglePin: { }
+            onEdit: {},
+            onDelete: {},
+            onTogglePin: {}
         )
     }
     .frame(width: 360)

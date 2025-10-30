@@ -178,14 +178,14 @@ struct SearchResult: Identifiable {
         results: [
             SearchResult(id: UUID(), title: "Test Prompt 1", body: "This is a test prompt"),
             SearchResult(id: UUID(), title: "Test Prompt 2", body: "Another test prompt"),
-            SearchResult(id: UUID(), title: "Test Prompt 3", body: "Yet another test")
+            SearchResult(id: UUID(), title: "Test Prompt 3", body: "Yet another test"),
         ],
         pinnedCount: 1,
         onSelect: { _ in },
         onEdit: { _ in },
         onDelete: { _ in },
         onTogglePin: { _ in },
-        onClose: { },
-        onAddNewPrompt: { }
+        onClose: {},
+        onAddNewPrompt: {}
     )
 }

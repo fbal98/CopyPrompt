@@ -12,12 +12,10 @@ struct SearchContainerView: View {
     let onClose: () -> Void
 
     private var filteredResults: [SearchResult] {
-        let prompts: [Prompt]
-
-        if query.isEmpty {
-            prompts = promptStore.prompts
+        let prompts: [Prompt] = if query.isEmpty {
+            promptStore.prompts
         } else {
-            prompts = FuzzySearchEngine.search(query: query, in: promptStore.prompts)
+            FuzzySearchEngine.search(query: query, in: promptStore.prompts)
         }
 
         return prompts.map { prompt in
@@ -76,7 +74,7 @@ struct SearchContainerView: View {
     private func installKeyboardHandling() {
         print("[EVENT MONITOR] Installing in SearchContainerView")
         eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
-            return self.handleKeyEvent(event)
+            handleKeyEvent(event)
         }
     }
 
@@ -153,7 +151,7 @@ struct SearchContainerView: View {
                 duration: duration,
                 metadata: [
                     "promptId": result.id.uuidString,
-                    "queryLength": "\(query.count)"
+                    "queryLength": "\(query.count)",
                 ]
             )
         }
@@ -173,7 +171,7 @@ struct SearchContainerView: View {
             metadata: [
                 "queryLength": "\(query.count)",
                 "resultCount": "\(filteredResults.count)",
-                "totalPrompts": "\(promptStore.prompts.count)"
+                "totalPrompts": "\(promptStore.prompts.count)",
             ]
         )
     }

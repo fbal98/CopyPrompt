@@ -40,7 +40,7 @@ class StatusBarController: ObservableObject {
     }
 
     @objc private func togglePanel(_ sender: Any?) {
-        guard let panel = panel else { return }
+        guard let panel else { return }
 
         // Check if this is a right-click event
         if let event = NSApp.currentEvent, event.type == .rightMouseUp {
@@ -65,7 +65,7 @@ class StatusBarController: ObservableObject {
 
     private func positionPanelBelowStatusItem() {
         guard let button = statusItem?.button,
-              let panel = panel,
+              let panel,
               let screen = NSScreen.main else { return }
 
         let buttonFrame = button.window?.convertToScreen(button.frame) ?? .zero

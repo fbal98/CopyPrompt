@@ -19,11 +19,11 @@ class LoginItemManager: ObservableObject {
     }
 
     private init() {
-        self.isEnabled = Self.checkStatus()
+        isEnabled = Self.checkStatus()
     }
 
     private static func checkStatus() -> Bool {
-        return SMAppService.mainApp.status == .enabled
+        SMAppService.mainApp.status == .enabled
     }
 
     private func updateLoginItem(_ shouldEnable: Bool) {

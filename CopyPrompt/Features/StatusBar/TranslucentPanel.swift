@@ -37,7 +37,7 @@ struct PanelContainerView: View {
                         mode = .search
                     }
                 )
-            case .editPrompt(let promptId):
+            case let .editPrompt(promptId):
                 EditPromptContainerView(
                     promptStore: promptStore,
                     promptId: promptId,
@@ -111,7 +111,7 @@ class TranslucentPanel: NSPanel {
             hosting.topAnchor.constraint(equalTo: visualEffect.topAnchor),
             hosting.leadingAnchor.constraint(equalTo: visualEffect.leadingAnchor),
             hosting.trailingAnchor.constraint(equalTo: visualEffect.trailingAnchor),
-            hosting.bottomAnchor.constraint(equalTo: visualEffect.bottomAnchor)
+            hosting.bottomAnchor.constraint(equalTo: visualEffect.bottomAnchor),
         ])
 
         contentView = visualEffect
@@ -119,11 +119,11 @@ class TranslucentPanel: NSPanel {
     }
 
     override var canBecomeKey: Bool {
-        return true
+        true
     }
 
     override var canBecomeMain: Bool {
-        return false
+        false
     }
 
     override func resignKey() {

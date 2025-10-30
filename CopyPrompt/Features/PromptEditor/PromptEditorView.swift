@@ -9,10 +9,10 @@ struct PromptEditorView: View {
     let onCancel: () -> Void
 
     init(prompt: Prompt, isNew: Bool, onSave: @escaping (Prompt) -> Void, onCancel: @escaping () -> Void) {
-        self.originalPrompt = prompt
+        originalPrompt = prompt
         self.isNew = isNew
-        self._title = State(initialValue: prompt.title)
-        self._promptBody = State(initialValue: prompt.body)
+        _title = State(initialValue: prompt.title)
+        _promptBody = State(initialValue: prompt.body)
         self.onSave = onSave
         self.onCancel = onCancel
     }

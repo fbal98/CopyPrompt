@@ -1,5 +1,5 @@
-import SwiftUI
 import AppKit
+import SwiftUI
 
 /// A custom TextEditor that properly handles Enter key presses for multiline input
 /// This wrapper uses NSTextView directly to prevent SwiftUI sheet dismissal on Enter
@@ -9,7 +9,9 @@ struct CustomTextEditor: NSViewRepresentable {
 
     func makeNSView(context: Context) -> NSScrollView {
         let scrollView = NSTextView.scrollableTextView()
-        let textView = scrollView.documentView as! NSTextView
+        guard let textView = scrollView.documentView as? NSTextView else {
+            return scrollView
+        }
 
         textView.delegate = context.coordinator
         textView.isRichText = false
@@ -33,7 +35,9 @@ struct CustomTextEditor: NSViewRepresentable {
     }
 
     func updateNSView(_ scrollView: NSScrollView, context: Context) {
-        let textView = scrollView.documentView as! NSTextView
+        guard let textView = scrollView.documentView as? NSTextView else {
+            return
+        }
 
         if textView.string != text {
             textView.string = text
@@ -58,16 +62,7 @@ struct CustomTextEditor: NSViewRepresentable {
 
         // Override to ensure Enter key creates new lines
         func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-            print("""
-            [HYPOTHESIS 2 TEST]
-            textView:doCommandBy called!
-            - selector: \(commandSelector)
-            - is insertNewline: \(commandSelector == #selector(NSResponder.insertNewline(_:)))
-            - textView is first responder: \(textView.window?.firstResponder == textView)
-            """)
-
             if commandSelector == #selector(NSResponder.insertNewline(_:)) {
-                print("  ✅ Intercepting insertNewline - adding newline manually")
                 // Insert a newline character instead of submitting
                 textView.insertNewline(nil)
                 return true
