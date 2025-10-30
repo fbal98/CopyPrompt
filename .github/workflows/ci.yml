@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
     - uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
     - name: Build
       run: |
         xcodebuild clean build \
-          -scheme PromptDock \
+          -scheme CopyPrompt \
           -configuration Debug \
           -destination 'platform=macOS' \
           CODE_SIGN_IDENTITY="" \
