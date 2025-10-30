@@ -21,6 +21,7 @@ class StatusBarController: ObservableObject {
 
         if let button = statusItem?.button {
             button.image = NSImage(named: "MenuBarIcon")
+            button.image?.size = NSSize(width: 24, height: 24)
             button.action = #selector(togglePanel)
             button.target = self
 
