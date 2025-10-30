@@ -33,3 +33,6 @@ release/
 
 # Local settings
 .claude/settings.local.json
+
+# Prompt backups (keep local, don't commit)
+prompts-backup.json

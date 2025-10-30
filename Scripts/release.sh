@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# PromptDock Release Build Script
+# CopyPrompt Release Build Script
 # Automates building, signing, notarizing, and packaging for distribution
 
 set -e  # Exit on error
 
 # Configuration
-APP_NAME="PromptDock"
-SCHEME="PromptDock"
-VERSION="1.1.0"
+APP_NAME="CopyPrompt"
+SCHEME="CopyPrompt"
+VERSION="1.0.0"
 BUILD_DIR="build"
 RELEASE_DIR="release"
-BUNDLE_ID="com.promptdock.PromptDock"
+BUNDLE_ID="com.copyprompt.CopyPrompt"
 
 # Colors for output
 RED='\033[0;31m'
@@ -62,14 +62,14 @@ clean_build() {
 build_app() {
     print_step "Building Release configuration..."
 
-    xcodebuild clean build \
-        -scheme "$SCHEME" \
-        -configuration Release \
-        -derivedDataPath "$BUILD_DIR" \
-        | xcpretty || xcodebuild clean build \
-        -scheme "$SCHEME" \
-        -configuration Release \
-        -derivedDataPath "$BUILD_DIR"
+    BUILD_COMMAND="xcodebuild clean build -scheme \"$SCHEME\" -configuration Release -derivedDataPath \"$BUILD_DIR\""
+
+    if command -v xcpretty &> /dev/null; then
+        eval "$BUILD_COMMAND | xcpretty"
+    else
+        print_warning "xcpretty not found. Output will not be prettified."
+        eval "$BUILD_COMMAND"
+    fi
 
     if [ ! -d "$BUILD_DIR/Build/Products/Release/$APP_NAME.app" ]; then
         print_error "Build failed - app bundle not found"
@@ -90,7 +90,6 @@ sign_app() {
 
     codesign --force --deep --sign "$identity" \
         --options runtime \
-        --entitlements "$APP_NAME/$APP_NAME.entitlements" \
         "$BUILD_DIR/Build/Products/Release/$APP_NAME.app"
 
     # Verify signature
